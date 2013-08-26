@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Dojo do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "validation" do
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:description) }
+  end
+
+  context "relationship" do
+    it { should have_many(:users)}
+  end
 end

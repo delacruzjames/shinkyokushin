@@ -3,4 +3,7 @@ class Dojo < ActiveRecord::Base
   belongs_to :instructor
 
   has_many :users
+
+  validates :name, :presence => true
+  validates :description, :presence => true
 end
