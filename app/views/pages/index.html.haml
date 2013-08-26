@@ -1,2 +1,9 @@
-%h1 Pages#index
-%p Find me in app/views/pages/index.html.haml
+%h2 List of all Dojos
+- @dojos.each do |dojo|
+	%ul
+		%li= link_to dojo.name, dojo
+
+%h2 List of all Instructors
+- @instructors.each do |instructor|
+	%ul
+		%li= link_to instructor.email, instructor
