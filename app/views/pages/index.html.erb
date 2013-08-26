@@ -1,0 +1,13 @@
+<h2> List of all Dojos </h2>
+<% @dojos.each do |dojo| %>
+<ul>
+		<li><%= link_to dojo.name, dojo %></li>
+</ul>
+<% end %>
+
+<h2> List of all Instructors </h2>
+<% @instructors.each do |instructor| %>
+<ul>
+		<li><%= link_to instructor.email, instructor %></li>
+</ul>
+<% end %>
