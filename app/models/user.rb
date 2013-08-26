@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   belongs_to :instructor
+  belongs_to :dojo
 end

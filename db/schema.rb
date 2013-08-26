@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130826033740) do
+ActiveRecord::Schema.define(:version => 20130826034730) do
 
   create_table "dojos", :force => true do |t|
     t.string   "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130826033740) do
     t.integer  "instructor_id"
     t.string   "type"
     t.boolean  "is_instructor",          :default => false
+    t.integer  "dojo_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
