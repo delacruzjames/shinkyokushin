@@ -8,7 +8,7 @@ puts "Creating instructors"
 
 instructors.each do |name|
 	sir = Instructor.find_by_email("#{name}@shinkyokushin.com.ph")
-	sir.dojos.create!(:name => "#{name.capitalize} Dojo", :description => "description description")
+	sir.dojos.create!(:name => "#{name.capitalize} Dojo", :description => "description description", :avatar => File.open(Rails.root.join("app","assets","images","#{name}_dojo.jpg")))
 end
 
 puts "Creating Dojos"

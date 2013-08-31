@@ -1,5 +1,8 @@
 class Dojo < ActiveRecord::Base
-  attr_accessible :description, :name
+  attr_accessible :description, :name, :avatar
+
+  mount_uploader :avatar, AvatarUploader
+
   belongs_to :instructor
 
   has_many :users
