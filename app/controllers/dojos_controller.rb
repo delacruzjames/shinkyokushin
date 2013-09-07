@@ -4,6 +4,10 @@ class DojosController < ApplicationController
 		@dojo = Dojo.find(params[:id])
 		if request.path != dojo_path(@dojo)
     		redirect_to @dojo, status: :moved_permanently
-  		end
+  	end
+	end
+
+	def index
+		
 	end
 end

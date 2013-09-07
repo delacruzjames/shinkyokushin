@@ -1,7 +1,7 @@
 Shinkyokushin::Application.routes.draw do
 
-  resources :dojos, :only => [:show]
-  resources :instructors, :only => [:show]
+  resources :dojos, :only => [:show, :index]
+  resources :instructors, :only => [:show, :index]
   devise_for :users do
   	match '/registration', :to => "devise/registrations#new"
   	match '/login', :to => "devise/sessions#new"
