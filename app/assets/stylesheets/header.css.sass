@@ -1,0 +1,49 @@
+.firstHeader
+  padding: 12px 0
+  text-transform: uppercase
+  text-shadow: 0 -1px 0 rgba(#000, 0.2)
+  @include shadow(0 -10px 5px -10px rgba(#000, 0.3) inset)
+  @include gradient(#f86a6a, #f04848, #ff2b30)
+  .logo
+    font-size: 14px
+    color: #fff
+    text-transform: uppercase
+    text-decoration: none
+    vertical-align: middle
+    padding: 2px 0
+  .register
+    margin-right: 5px
+
+.secondHeader
+  @include rgba-bg(#fff, 0.7)
+  @include shadow(0 1px 2px 0 rgba(#000, 0.2))
+  .nav, .counter
+    height: 60px
+    display: table
+    .link
+      padding: 0 15px
+      display: table-cell
+      vertical-align: middle
+  .nav
+    .link, a
+      color: #707070
+      font-weight: 700
+      text-transform: uppercase
+      text-decoration: none
+      &:hover
+        color: $redfont
+        @include gradient(rgba(#000, 0.05), transparent, transparent)
+        @include transition(all 0.3s linear)
+  .counter
+    height: 60px
+    text-align: right
+    text-transform: uppercase
+    @include gradient(transparent, rgba(#000, 0.03), transparent)
+    .verticalSeparator
+      @include gradient(transparent, #d7d7d7, transparent)
+    .number
+      font-size: 15px
+      font-weight: 700
+    .text
+      font-size: 10px
+
