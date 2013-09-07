@@ -1,13 +1,32 @@
-%h2 List of all Dojos
-- @dojos.each do |dojo|
-  %ul
-    %li
-      = link_to dojo.name, dojo
-    %li
-      = link_to image_tag(dojo.avatar_url(:medium)), dojo
+.homePage
+  .coverImage
+    =image_tag "cover.jpg"
+    .contentContainer
+      .content
+        .text Shinkyokushin will be expanding its training program nationwide starting today.
+        .btn Learn More
+  .wrapper
+    .dojosList.whiteContainer
+      .head
+        Dojos
+      .body
+        .dojos
+          - @dojos.each do |dojo|
+            .dojo
+              = link_to image_tag(dojo.avatar_url(:medium)), dojo
+              = link_to dojo.name, dojo, :class => "name"
 
-%h2 List of all Instructors
-- @instructors.each do |instructor|
-  %ul
-    %li
-      = link_to instructor.email, instructor
+    .mainSection
+      %h2 List of all Dojos
+      - @dojos.each do |dojo|
+        %ul
+          %li
+            = link_to dojo.name, dojo
+          %li
+            = link_to image_tag(dojo.avatar_url(:medium)), dojo
+
+      %h2 List of all Instructors
+      - @instructors.each do |instructor|
+        %ul
+          %li
+            = link_to instructor.email, instructor
