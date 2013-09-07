@@ -1,6 +1,6 @@
 !!!
 /[if IE] <html class="no-js ie">
-%html.no-js
+%html
   %head
     %script if(/*@cc_on!@*/false && document.documentMode === 10){document.documentElement.className+=' ie10';}
     %meta{:charset => "utf-8"}
@@ -14,10 +14,12 @@
     /[if lt IE 7]
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     %section#main
-      %header.navbar.navbar-fixed-top.navbar-inverse
+      %header
         = render :partial => 'shared/header'
       %section= yield
     %footer
+      .wrapper
+        Shinkyokushin Copyright 2013
     / Javascripts placed at the end of the document so the pages load faster
     = javascript_include_tag "application"
     %script{:src => "http://js.pusher.com/2.0/pusher.min.js", :type => "text/javascript"}

@@ -17,3 +17,30 @@
               = link_to dojo.name, dojo, :class => "name"
 
     .mainSection
+      .news.whiteContainer
+        .head
+          News
+        .body
+          .newsList.row-fluid
+            .article.span3
+              .title Shinkyoku Launch Date
+              .date 12/31/2013
+              .summary Lorem Ipsum. Proin gravida nibh ve vl velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+              .verticalSeparator
+            .article.span3
+              .title Shinkyoku Traingin Program
+              .date 12/31/2013
+              .summary Lorem Ipsum. Proin gravida nibh ve vl velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+            .article.span3
+              .title Kyoku Dojo Soft Launch
+              .date 12/31/2013
+              .summary Lorem Ipsum. Proin gravida nibh ve vl velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+            .article.span3
+              .title Shinkyo Dojo Soft Launch
+              .date 12/31/2013
+              .summary Lorem Ipsum. Proin gravida nibh ve vl velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+      / %h2 List of all Instructors
+      / - @instructors.each do |instructor|
+      /   %ul
+      /     %li
+      /       = link_to instructor.email, instructor
