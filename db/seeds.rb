@@ -1,7 +1,7 @@
 instructors = ["rose", "james", "charlie", "carl", "delacruz"]
 students = ["anne", "martin", "david", "solomon", "bea", "blessie", "marie"]
 instructors.each do |name|
-	Instructor.create!(:email => "#{name}@shinkyokushin.com.ph", :password => "password", :password_confirmation => "password")
+	Instructor.create!(:email => "#{name}@shinkyokushin.com.ph", :password => "password", :password_confirmation => "password", :first_name => "Sensie #{name.capitalize}", :last_name => "MyLastName")
 end
 
 puts "Creating instructors"
@@ -14,7 +14,7 @@ end
 puts "Creating Dojos"
 
 students.each do |student|
-	Member.create!(:email => "#{student}@shinkyokushin.com.ph", :password => "password", :password_confirmation => "password", :dojo_id => rand(1..4))
+	Member.create!(:email => "#{student}@shinkyokushin.com.ph", :password => "password", :password_confirmation => "password", :dojo_id => rand(1..4), :first_name => "Sempai #{student.capitalize}", :last_name => "MyLastName")
 end
 
 puts "Creating Students.."
