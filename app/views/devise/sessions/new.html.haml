@@ -1,0 +1,15 @@
+.signInPage.pageContainer
+  .wrapper
+    .mainSection
+      .signInContainer.whiteContainer
+        .head Sign In
+        .body
+          = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+            = f.email_field :email, :autofocus => true, :placeholder => "Email", :class => "textBox"
+            = f.password_field :password, :placeholder => "Password", :class => "textBox"
+            - if devise_mapping.rememberable?
+              .remember
+                = f.check_box :remember_me
+                = f.label :remember_me
+            = f.submit "Sign in", :class => "btn"
+          = render "devise/shared/links"
