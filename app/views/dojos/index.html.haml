@@ -1,2 +1,6 @@
 %h1 Dojos#index
 %p Find me in app/views/dojos/index.html.haml
+
+- @dojos.each do |dojo|
+  %ul
+    %li= link_to image_tag(dojo.avatar_url(:small)), dojo

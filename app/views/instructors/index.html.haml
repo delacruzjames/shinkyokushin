@@ -1,2 +1,6 @@
 %h1 Instructors#index
 %p Find me in app/views/instructors/index.html.haml
+
+- @instructors.each do |instructor|
+	%ul
+		%li= instructor.email
