@@ -7,6 +7,7 @@ class Dojo < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   belongs_to :instructor
+  
 
   has_many :users
 
