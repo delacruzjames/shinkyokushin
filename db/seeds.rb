@@ -14,7 +14,7 @@ end
 puts "Creating Dojos"
 
 students.each do |student|
-	User.create!(:email => "#{student}@shinkyokushin.com.ph", :password => "password", :password_confirmation => "password", :dojo_id => rand(1..4))
+	Member.create!(:email => "#{student}@shinkyokushin.com.ph", :password => "password", :password_confirmation => "password", :dojo_id => rand(1..4))
 end
 
 puts "Creating Students.."

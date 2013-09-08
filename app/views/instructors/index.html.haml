@@ -3,4 +3,4 @@
 
 - @instructors.each do |instructor|
 	%ul
-		%li= instructor.email
+		%li= link_to instructor.email, instructor
