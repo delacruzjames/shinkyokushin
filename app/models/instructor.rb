@@ -1,5 +1,5 @@
 class Instructor < User
-
+	
   after_initialize :init
 
   has_many :users
