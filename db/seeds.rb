@@ -18,3 +18,6 @@ students.each do |student|
 end
 
 puts "Creating Students.."
+
+admin = AdminUser.create!(:email => "admin@shinkyokushin.com.ph", :password => "shinkyokushin2013", :password_confirmation => "shinkyokushin2013")
+puts "Creating AdminUser #{admin.email}"
