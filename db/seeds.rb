@@ -2,8 +2,9 @@
 dojos = ["manila", "qc", "caloocan", "makati", "pasay"]
 
 instructor = Instructor.create!(:email => 'instructor@shinkyokushin.com.ph', :password => 'password', :password_confirmation => 'password')
-puts "Creating Instructor... "
-puts "#{instructor.email}.."
+student = Member.create!(:email => "student@gmail.com", :password => "password", :password_confirmation => "password")
+puts "Creating Users"
+puts "#{instructor.email}.. #{student.email}.."
 
 dojos.each do |dojo|
 	instructor = Instructor.last

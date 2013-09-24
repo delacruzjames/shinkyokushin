@@ -5,25 +5,51 @@
         = image_tag "logo.png"
         Shinkyokushin
       - if user_signed_in?
+        = current_user.email
         = link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'btn right'
       - else
         = link_to "Login", new_user_session_path, :class => "login btn right"
         = link_to "Register", new_user_registration_path, :class => "register btn right"
   .secondHeader
     .wrapper.clearfix
-      .nav.left
-        .verticalSeparator
-        = link_to "Home", root_path, :class => "link"
-        .verticalSeparator
-        = link_to "Dojos", dojos_path, :class => "link"
-        .verticalSeparator
-        = link_to "Instructors", instructors_path, :class => "link"
-        .verticalSeparator
-        = link_to "Students", members_path, :class => "link"
-        .verticalSeparator
-      .counter.right
-        .verticalSeparator
-        .students.link
-          .number 3,102
-          .text Students
-        .verticalSeparator
+      - if user_signed_in?
+        - if current_user.is_instructor?
+          = render :partial => 'shared/instructor_header'
+        - else
+          = render :partial => 'shared/student_header'
+      - else 
+        .nav.left
+          .verticalSeparator
+          = link_to "Home", root_path, :class => "link"
+          .verticalSeparator
+          = link_to "Dojos", dojos_path, :class => "link"
+          .verticalSeparator
+          = link_to "Instructors", instructors_path, :class => "link"
+          .verticalSeparator
+          = link_to "Students", members_path, :class => "link"
+          .verticalSeparator
+        .counter.right
+          .verticalSeparator
+          .students.link
+            .number 3,102
+            .text Students
+          .verticalSeparator
+      / - if current_user.is_instructor?
+
+      / - else
+      /   .nav.left
+      /     .verticalSeparator
+      /     = link_to "Home", root_path, :class => "link"
+      /     .verticalSeparator
+      /     = link_to "Dojos", dojos_path, :class => "link"
+      /     .verticalSeparator
+      /     = link_to "Instructors", instructors_path, :class => "link"
+      /     .verticalSeparator
+      /     = link_to "Students", members_path, :class => "link"
+      /     .verticalSeparator
+      /   .counter.right
+      /     .verticalSeparator
+      /     .students.link
+      /       .number 3,102
+      /       .text Students
+      /     .verticalSeparator
