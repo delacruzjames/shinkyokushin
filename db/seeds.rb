@@ -1,8 +1,8 @@
 
 dojos = ["manila", "qc", "caloocan", "makati", "pasay"]
 
-instructor = Instructor.create!(:email => 'instructor@shinkyokushin.com.ph', :password => 'password', :password_confirmation => 'password')
-student = Member.create!(:email => "student@gmail.com", :password => "password", :password_confirmation => "password")
+instructor = Instructor.create!(:first_name => "James", :last_name => "Dela Cruz", :email => 'instructor@shinkyokushin.com.ph', :password => 'password', :password_confirmation => 'password')
+student = Member.create!(:first_name => "Juan", :last_name => "Dela Cruz", :email => "student@gmail.com", :password => "password", :password_confirmation => "password", :dojo_id => 2)
 puts "Creating Users"
 puts "#{instructor.email}.. #{student.email}.."
 
