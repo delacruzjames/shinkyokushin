@@ -1,6 +1,13 @@
-%h1 Members#index
-%p Find me in app/views/members/index.html.haml
+.membersListPage.pageContainer
+  .wrapper
+    .mainSection
+      .whiteContainer
+        .head Members
+        .body
+          / - @members.each do |member|
+          /   %ul
+          /     %li= link_to member.email, member
+          .members
+            
 
-- @members.each do |member|
-	%ul
-		%li= link_to member.email, member
+

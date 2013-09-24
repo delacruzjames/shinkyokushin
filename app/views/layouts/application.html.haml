@@ -18,8 +18,9 @@
         = render :partial => 'shared/header'
       %section= yield
     %footer
-      .footerWrapper.wrapper
-        .footerText Shinkyokushin Copyright 2013
+      .footerWrapper
+        .wrapper
+          .footerText Shinkyokushin Copyright 2013
     / Javascripts placed at the end of the document so the pages load faster
     = javascript_include_tag "application"
     %script{:src => "http://js.pusher.com/2.0/pusher.min.js", :type => "text/javascript"}

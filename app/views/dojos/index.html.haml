@@ -1,9 +1,13 @@
-%h1 Dojos#index
-%p Find me in app/views/dojos/index.html.haml
-
-- @dojos.each do |dojo|
-	%h2
-		= link_to image_tag(dojo.avatar_url(:small)), dojo
-		= dojo.name
-		= dojo.instructor.full_name
-		= dojo.users.count
+.dojosListPage.pageContainer
+  .wrapper
+    .mainSection
+      .whiteContainer
+        .head Dojos
+        .body
+          - @dojos.each do |dojo|
+            %h2
+              = link_to image_tag(dojo.avatar_url(:small)), dojo
+              = dojo.name
+              = dojo.instructor.full_name
+              = dojo.users.count
+          .dojos

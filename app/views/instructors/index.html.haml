@@ -1,6 +1,10 @@
-%h1 Instructors#index
-%p Find me in app/views/instructors/index.html.haml
-
-- @instructors.each do |instructor|
-	%ul
-		%li= link_to instructor.email, instructor
+.instructorsListPage.pageContainer
+  .wrapper
+    .mainSection
+      .whiteContainer
+        .head Instructors
+        .body
+          - @instructors.each do |instructor|
+            %ul
+              %li= link_to instructor.email, instructor
+          .instructors
