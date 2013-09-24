@@ -3,13 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 # gem 'mysql2'
-group :development do
-  gem 'sqlite3'
-end
+gem 'pg'
 
-group :production do
-  gem 'pg'
-end
 
 gem 'haml'
 gem 'jquery-rails', '2.3.0'
