@@ -13,4 +13,4 @@ end
 
 puts "Creating Dojos..."
 
-
+AdminUser.create!(:email => "admin@shinkyokushin.com.ph", :password => "password", :password_confirmation => "password" )
