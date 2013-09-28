@@ -23,14 +23,22 @@ group :assets do
 end
 
 group :test, :development do
-  gem "rspec-rails"
-  gem "factory_girl_rails"
-  gem "pry"
-  gem "better_errors"
-  gem "guard-rspec"
-  gem "shoulda-matchers"
+  gem 'pry'
+  gem 'better_errors'
   gem 'terminal-notifier-guard'
-  gem "webrat"
+
+  # specs
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+
+  # faster spec execution
+  gem "guard-rspec"
+
+  # factories
+  gem "factory_girl_rails"
+
+  # deployment
   gem "capistrano"
 end
 
