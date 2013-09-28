@@ -15,4 +15,13 @@
 
 == for new features
 
+1. create your own branch
+      git branch -b <your_name_branch>
+2. always rebase to master
+      git rebase master
+3. and push to your branch and send me email updates
+      git push origin <your_name_branch>
+
+
+== thanks guys..
 
