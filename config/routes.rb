@@ -1,7 +1,7 @@
 Shinkyokushin::Application.routes.draw do
 
   match "/dashboard", :to => "pages#instructor_dashboard"
-  resources :dojos, :only => [:show, :index]
+  resources :dojos, except: [:edit, :update, :destroy]
   resources :instructors, :only => [:show, :index]
   resources :members, :only => [:show, :index]
   devise_for :users do

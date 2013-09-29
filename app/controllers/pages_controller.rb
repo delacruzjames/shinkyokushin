@@ -10,7 +10,9 @@ class PagesController < ApplicationController
   end
 
   def instructor_dashboard
+
   	if current_user.is_instructor?
+      @dojos = Dojo.all
   		render "instructor/dashboard"
   	else
   		render "student/dashboard"

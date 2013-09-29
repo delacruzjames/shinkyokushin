@@ -1,1 +1,9 @@
 %h1 Instructor Dashboard
+
+= link_to 'Add dojo', new_dojo_path
+
+- @dojos.each do |dojo|
+  %p
+    = dojo.name
+    %br
+    = dojo.description
