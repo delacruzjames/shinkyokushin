@@ -16,7 +16,7 @@ class DojosController < ApplicationController
   end
 
   def create
-    @dojo = Dojo.new params[:dojo]
+    @dojo = current_user.dojos.build params[:dojo]
     @dojo.save
     redirect_to dashboard_path, notice: 'Dojo created successfully'
   end
