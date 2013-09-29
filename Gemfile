@@ -32,6 +32,7 @@ end
 group :test do
   gem 'launchy'
   gem 'capybara'
+  gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'terminal-notifier-guard'
