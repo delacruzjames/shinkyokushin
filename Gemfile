@@ -22,24 +22,23 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :test, :development do
+group :development do
   gem 'pry'
+  gem 'capistrano'
+  gem 'guard-rspec'
   gem 'better_errors'
-  gem 'terminal-notifier-guard'
+end
 
-  # specs
+group :test do
+  gem 'launchy'
   gem 'capybara'
-  gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+  gem 'terminal-notifier-guard'
+end
 
-  # faster spec execution
-  gem "guard-rspec"
-
-  # factories
-  gem "factory_girl_rails"
-
-  # deployment
-  gem "capistrano"
+group :test, :development do
+  gem 'rspec-rails'
 end
 
 # Facebook Login
