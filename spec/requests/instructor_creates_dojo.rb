@@ -3,42 +3,37 @@ require 'spec_helper'
 describe "Instructor" do
 
   before(:all) do
-    @attrs = {
-      first_name: 'James',
-       last_name: 'dela Cruz',
-           email: 'instructor@example.com',
-        password: 'password'
-    }
-    Instructor.create! @attrs
+    @dojo_attrs = FactoryGirl.attributes_for :dojo
+    @instructor_attrs = FactoryGirl.attributes_for :instructor
+    Instructor.create! @instructor_attrs
   end
 
   before(:each) do
     visit '/dashboard'
-    expect(page).to have_content("Sign In")
-    login
-  end
-
-  def login
-    fill_in "Email", with: @attrs[:email]
-    fill_in "Password", with: @attrs[:password]
-    click_on "Sign in"
+    expect(page).to have_content('Sign In')
+    sign_in_as_instructor
   end
 
   it "can create dojo" do
     click_link "Add dojo"
-
-    fill_in  'Name',        with: 'Name for new dojo'
-    fill_in  'Description', with: 'Description for new dojo'
-
-    click_on 'Create Dojo'
+    fill_up_dojo_form
 
     expect(page).to have_content("created successfully")
-
-
-    save_and_open_page
-
-    expect(page).to have_content("Name for new dojo")
-    expect(page).to have_content("Description for new dojo")
+    expect(page).to have_content @dojo_attrs[:name]
+    expect(page).to have_content @dojo_attrs[:description]
   end
 
+  private
+
+    def sign_in_as_instructor
+      fill_in "Email",    with: @instructor_attrs[:email]
+      fill_in "Password", with: @instructor_attrs[:password]
+      click_on "Sign in"
+    end
+
+    def fill_up_dojo_form
+      fill_in  'Name',        with: @dojo_attrs[:name]
+      fill_in  'Description', with: @dojo_attrs[:description]
+      click_on 'Create Dojo'
+    end
 end
