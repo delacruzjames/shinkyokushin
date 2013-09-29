@@ -1,0 +1,61 @@
+.dojosListPage
+  .body
+    border: none
+    @include shadow(0 0 0 1px rgba(#000, 0.12) inset)
+  .dojos
+    margin: -25px
+    margin-bottom: 0
+    overflow-y: hidden
+    .dojo
+      display: inline-block
+      width: 230px
+      border: 1px solid rgba(#000, 0.12)
+      border-left: none
+      border-top: none
+      padding: 5px
+      margin-bottom: -1px
+      .image
+        width: 100%
+        height: 150px
+        background: #000
+        overflow: hidden
+        position: relative
+        &:hover
+          .details
+            // -webkit-transform: translateY(-30px)
+            @include translate(0, -30px)
+            @include transition(all 0.2s ease-in-out)
+            .instructorName, .membersCount
+              @include opacity(1)
+              @include transition(opacity 0.4s ease-in-out)
+        img
+          width: 100%
+          min-height: 120px
+        .details
+          padding: 10px
+          position: absolute
+          margin-bottom: -5px
+          bottom: 0
+          left: 0
+          width: 100%
+          border-top: 1px solid rgba(#fff, 0.8)
+          text-shadow: 0 -1px 0 rgba(#fff, 0.5)
+          color: rgba($blackfont, 0.8)
+          margin-bottom: -30px
+          @include rgba-bg(#fff, 0.8)
+          @include transition(all 0.2s ease-in-out)
+          .dojoName
+            font-weight: 700
+            font-size: 13px
+            color: $redfont
+          .instructorName
+            font-weight: 700
+          .dojoName, .instructorName
+            margin-bottom: 3px
+          .instructorName, .membersCount
+            @include opacity(0)
+            @include transition(opacity 0.2s ease-in-out)
+          .dojoName, .instructorName, .membersCount
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: ellipsis

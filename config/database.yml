@@ -1,15 +1,17 @@
 development:
   adapter: postgresql
   database: karate_dev
-  username: postgres
-  password: admin
+  username: postgres 
+  password:
+  host: 127.0.0.1
   port: 5432
 
 test:
   adapter: postgresql
   database: karate_test
   username: postgres
-  password: admin
+  password:
+  host: 127.0.0.1
   port: 5432
 
 production:

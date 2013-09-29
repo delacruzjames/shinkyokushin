@@ -4,10 +4,15 @@
       .whiteContainer
         .head Dojos
         .body
-          - @dojos.each do |dojo|
-            %h2
-              = link_to image_tag(dojo.avatar_url(:small)), dojo
-              = dojo.name
-              = dojo.instructor.full_name
-              = dojo.users.count
+          .dojos.clearfix
+            - @dojos.each do |dojo|
+              .dojo.left
+                .image
+                  = link_to image_tag(dojo.avatar_url(:small)), dojo
+                  .details
+                    .dojoName= dojo.name
+                    .instructorName= dojo.instructor.full_name
+                    .membersCount
+                      = dojo.users.count
+                      Member(s)
           .dojos

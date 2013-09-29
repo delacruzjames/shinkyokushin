@@ -1,0 +1,7 @@
+LOG:  database system was shut down at 2013-09-29 16:47:57 PHT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  role "postgres" does not exist
+FATAL:  database "karate_dev" does not exist
+FATAL:  database "karate_dev" does not exist
+FATAL:  database "karate_test" does not exist
