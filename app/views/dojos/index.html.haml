@@ -8,7 +8,9 @@
             - @dojos.each do |dojo|
               .dojo.left
                 .image
+                  = link_to "", dojo, :class => "viewIcon"
                   = link_to image_tag(dojo.avatar_url(:small)), dojo
+                  .blackCover
                   .details
                     .dojoName= dojo.name
                     .instructorName= dojo.instructor.full_name
