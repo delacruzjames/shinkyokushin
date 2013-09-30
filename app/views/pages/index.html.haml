@@ -10,11 +10,18 @@
       .head
         Dojos
       .body
-        .dojos
+        .dojos.clearfix
           - @dojos.each do |dojo|
-            .dojo
-              = link_to image_tag(dojo.avatar_url(:medium)), dojo
-              = link_to dojo.name, dojo, :class => "name"
+            .dojo.left
+              .image
+                = link_to "", dojo, :class => "viewIcon"
+                = link_to image_tag(dojo.avatar_url(:medium)), dojo
+                .details
+                  .dojoName= link_to dojo.name, dojo
+                  .instructorName= dojo.instructor.full_name
+                  .membersCount
+                    = dojo.users.count
+                    Member(s)
 
     .mainSection
       .news.whiteContainer

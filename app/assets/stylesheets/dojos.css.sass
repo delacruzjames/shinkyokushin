@@ -9,9 +9,8 @@
     .dojo
       display: inline-block
       width: 230px
-      border: 1px solid rgba(#000, 0.12)
-      border-left: none
-      border-top: none
+      border-bottom: 1px solid #ddd
+      border-right: 1px solid #ddd
       padding: 5px
       margin-bottom: -1px
       .image
@@ -20,21 +19,45 @@
         background: #000
         overflow: hidden
         position: relative
+        .viewIcon
+          width: 24px
+          height: 17px
         &:hover
+          .viewIcon
+            margin-top: 0
+            @include transition(all 0.2s ease-in-out)
+          img
+            @include opacity(0.7)
+            @include transition(opacity 0.3s ease-in-out)
           .details
-            // -webkit-transform: translateY(-30px)
-            @include translate(0, -30px)
+            margin-bottom: 0
             @include transition(all 0.2s ease-in-out)
             .instructorName, .membersCount
               @include opacity(1)
               @include transition(opacity 0.4s ease-in-out)
+        .viewIcon
+          position: absolute
+          top: 18px
+          left: 50%
+          margin-top: -100px
+          margin-left: -50px
+          width: 100px
+          height: 50px
+          text-align: center
+          z-index: 1
+          color: #fff
+          font-weight: 700
+          border: 1px solid rgba(#fff, 0.5)
+          background: url(../assets/view-icon.png) center center no-repeat
+          @include border-radius(3px)
+          @include transition(all 0.2s ease-in-out)
         img
           width: 100%
           min-height: 120px
+          @include transition(opacity 0.3s ease-in-out)
         .details
           padding: 10px
           position: absolute
-          margin-bottom: -5px
           bottom: 0
           left: 0
           width: 100%
