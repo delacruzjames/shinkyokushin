@@ -16,7 +16,12 @@
     %section#main
       %header
         = render :partial => 'shared/header'
-      %section= yield
+
+      %section
+        = flash[:notice] if flash[:notice]
+
+        = yield
+
     %footer
       .footerWrapper
         .wrapper

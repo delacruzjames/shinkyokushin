@@ -22,16 +22,24 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :test, :development do
-  gem "rspec-rails"
-  gem "factory_girl_rails"
-  gem "pry"
-  gem "better_errors"
-  gem "guard-rspec"
-  gem "shoulda-matchers"
+group :development do
+  gem 'pry'
+  gem 'capistrano'
+  gem 'guard-rspec'
+  gem 'better_errors'
+end
+
+group :test do
+  gem 'launchy'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
   gem 'terminal-notifier-guard'
-  gem "webrat"
-  gem "capistrano"
+end
+
+group :test, :development do
+  gem 'rspec-rails'
 end
 
 # Facebook Login

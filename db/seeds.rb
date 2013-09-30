@@ -1,16 +1,42 @@
-
-dojos = ["manila", "qc", "caloocan", "makati", "pasay"]
-
-instructor = Instructor.create!(:first_name => "James", :last_name => "Dela Cruz", :email => 'instructor@shinkyokushin.com.ph', :password => 'password', :password_confirmation => 'password')
-student = Member.create!(:first_name => "Juan", :last_name => "Dela Cruz", :email => "student@gmail.com", :password => "password", :password_confirmation => "password", :dojo_id => 2)
-puts "Creating Users"
-puts "#{instructor.email}.. #{student.email}.."
-
-dojos.each do |dojo|
-	instructor = Instructor.last
-	instructor.dojos.create!(:name => "#{dojo.upcase}", :description => "#{dojo}-description", :avatar => File.open(Rails.root.join("app","assets","images","#{dojo}.jpg")))
+puts 'Cleaning up...'
+%w{ Instructor Member Dojo AdminUser }.each do |model|
+  model.constantize.delete_all
 end
 
-puts "Creating Dojos..."
 
-AdminUser.create!(:email => "admin@shinkyokushin.com.ph", :password => "password", :password_confirmation => "password" )
+
+puts 'Creating instructor...'
+james = Instructor.new(
+             first_name: 'James',
+              last_name: 'Dela Cruz',
+                  email: 'instructor@shinkyokushin.com.ph',
+               password: 'password')
+
+
+
+puts 'Creating dojos...'
+attrs = %w{ Manila QC Caloocan Makati Pasay }.reduce([]) do |attrs, name|
+  attrs << {
+           name: name,
+    description: "#{name}-description",
+         avatar: File.open(Rails.root.join('app/assets/images', "#{name}.jpg"))
+  }
+end
+james.dojos_attributes = attrs
+james.save!
+
+
+
+puts 'Creating student...'
+james.dojos.first.users.create(
+    first_name: 'Juan',
+     last_name: 'Dela Cruz',
+         email: 'student@gmail.com',
+      password: 'password')
+
+
+
+puts 'Creating admin...'
+AdminUser.create!(:email => "admin@shinkyokushin.com.ph", :password => "password")
+
+puts 'All done!'
