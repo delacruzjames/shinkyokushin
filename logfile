@@ -5,3 +5,7 @@ FATAL:  role "postgres" does not exist
 FATAL:  database "karate_dev" does not exist
 FATAL:  database "karate_dev" does not exist
 FATAL:  database "karate_test" does not exist
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
