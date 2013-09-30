@@ -15,3 +15,10 @@ config/database.yml
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore Vim temp files
+.*un~
+*.swp
+*.swo
+
+config/database.yml
