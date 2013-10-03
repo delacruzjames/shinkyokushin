@@ -1,0 +1,9 @@
+%center= image_tag @dojo.avatar.url(:large)
+%h1= @dojo.name
+%h4= @dojo.description
+
+= link_to "Add photo album"
+
+%ul
+  - @dojo.users.each do |user|
+    %li= user.email
