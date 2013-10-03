@@ -2,7 +2,7 @@
 %h1= @dojo.name
 %h4= @dojo.description
 
-= link_to "Add photo album"
+= link_to "Add photo album", new_dojo_album_path(@dojo)
 
 %ul
   - @dojo.users.each do |user|

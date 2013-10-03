@@ -44,7 +44,7 @@ describe "Instructor" do
       image_click("Assets")
       click_link "Add photo album"
       fill_up_album_form
-      expect(page).to have_content("Album was created successfully")
+      expect(page).to have_content("Album created successfully")
     end
   end
 
