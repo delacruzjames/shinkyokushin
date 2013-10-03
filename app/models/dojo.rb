@@ -10,6 +10,7 @@ class Dojo < ActiveRecord::Base
   
 
   has_many :users
+  has_many :albums
 
   validates :name, :presence => true
   validates :description, :presence => true
