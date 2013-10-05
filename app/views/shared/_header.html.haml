@@ -6,17 +6,19 @@
         Shinkyokushin
     .actionButtonsContainer
       - if user_signed_in?
-        = current_user.email
         = link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'btn right'
       - else
         = link_to "Login", new_user_session_path, :class => "login btn right"
         = link_to "Register", new_user_registration_path, :class => "register btn right"
   .secondHeader
     .menu.clearfix
-      = link_to "Home", root_path, :class => "link left firstLink"
-      = link_to "Dojos", dojos_path, :class => "link left"
-      = link_to "Instructors", instructors_path, :class => "link left"
-      = link_to "Members", members_path, :class => "link left"
+      - if user_signed_in?
+        .link.left.firstLink= current_user.email
+      - else
+        = link_to "Home", root_path, :class => "link left firstLink"
+        = link_to "Dojos", dojos_path, :class => "link left"
+        = link_to "Instructors", instructors_path, :class => "link left"
+        = link_to "Members", members_path, :class => "link left"
     .counter
       //.verticalSeparator
       .students.link
