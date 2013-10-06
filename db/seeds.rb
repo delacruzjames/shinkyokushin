@@ -19,7 +19,7 @@ attrs = %w{ Manila QC Caloocan Makati Pasay }.reduce([]) do |attrs, name|
   attrs << {
            name: name,
     description: "#{name}-description",
-         avatar: File.open(Rails.root.join('app/assets/images', "#{name}.jpg"))
+         avatar: File.open(Rails.root.join('app/assets/images', "#{name.downcase}.jpg"))
   }
 end
 james.dojos_attributes = attrs
