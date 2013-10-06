@@ -1,10 +1,14 @@
-%h1 Instructor Dashboard
+.instructorDashboard.pageContainer
+  .wrapper
+    .mainSection
+      .whiteContainer
+        .head Instructor Dashboard
+        .body
+          = link_to 'Add dojo', new_dojo_path, :class => "btn"
+          = link_to 'Edit profile', edit_user_registration_path, :class => "btn"
 
-= link_to 'Add dojo', new_dojo_path
-= link_to 'Edit profile', edit_user_registration_path
-
-- @dojos.each do |dojo|
-  %p
-    = dojo.name
-    %br
-    = dojo.description
+          - @dojos.each do |dojo|
+            %p
+              = dojo.name
+              %br
+              = dojo.description
