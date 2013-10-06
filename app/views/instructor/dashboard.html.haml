@@ -7,8 +7,16 @@
           = link_to 'Add dojo', new_dojo_path, :class => "btn"
           = link_to 'Edit profile', edit_user_registration_path, :class => "btn"
 
-          - @dojos.each do |dojo|
-            %p
-              = dojo.name
-              %br
-              = dojo.description
+          %p
+            %br
+
+          %table{ style: "width: 100%;" }
+            %tr
+              %th{ style: 'text-align: left;' } Name
+              %th{ style: 'text-align: left;' } All Students
+              %th{ style: 'text-align: left;' } Active Students
+            - @dojos.each do |dojo|
+              %tr
+                %td= dojo.name
+                %td= dojo.users.size
+                %td Comming Soon
