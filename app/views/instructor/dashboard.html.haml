@@ -4,6 +4,26 @@
       .whiteContainer
         .head Instructor Dashboard
         .body
+
+          /TODO: eman patanggal nalang neto tsaka mga inline styles sa baba
+          %div{ style: 'float: right;'}
+            %table
+              %tr
+                %th{ colspan: 2 } This month
+              %tr
+                %th{ style: 'text-align: right;'} Students Total: 
+                %td 100
+              %tr
+                %th{ style: 'text-align: right;'} Active Members: 
+                %td 50
+              %tr
+                %th{ style: 'text-align: right;'} Membership Income: 
+                %td ₱ 5,000.00
+
+
+          %p
+            %br
+
           = link_to 'Add dojo', new_dojo_path, :class => "btn"
           = link_to 'Edit profile', edit_user_registration_path, :class => "btn"
 
@@ -12,11 +32,13 @@
 
           %table{ style: "width: 100%;" }
             %tr
-              %th{ style: 'text-align: left;' } Name
-              %th{ style: 'text-align: left;' } All Students
-              %th{ style: 'text-align: left;' } Active Students
+              %th{ style: 'text-align: left;' } Dojo
+              %th{ style: 'text-align: left;' } Number of Members
+              %th{ style: 'text-align: left;' } Number of Active Members
+              %th{ style: 'text-align: left;' } Income from Membership
             - @dojos.each do |dojo|
               %tr
                 %td= dojo.name
-                %td= dojo.users.size
-                %td Comming Soon
+                %td= 20 #dojo.users.size
+                %td= 10
+                %td= 1000
