@@ -1,44 +1,78 @@
 .instructorDashboard.pageContainer
   .wrapper
     .mainSection
-      .whiteContainer
+      .dashboardHeader.whiteContainer
         .head Instructor Dashboard
         .body
-
-          /TODO: eman patanggal nalang neto tsaka mga inline styles sa baba
-          %div{ style: 'float: right;'}
-            %table
-              %tr
-                %th{ colspan: 2 } This month
-              %tr
-                %th{ style: 'text-align: right;'} Students Total: 
-                %td 100
-              %tr
-                %th{ style: 'text-align: right;'} Active Members: 
-                %td 50
-              %tr
-                %th{ style: 'text-align: right;'} Membership Income: 
-                %td ₱ 5,000.00
-
-
-          %p
-            %br
-
-          = link_to 'Add dojo', new_dojo_path, :class => "btn"
           = link_to 'Edit profile', edit_user_registration_path, :class => "btn"
+          = link_to 'Add dojo', new_dojo_path, :class => "btn"
+      .accountSummary.whiteContainer
+        .head Account Summary
+        .body
+          .listStyle.instructorSummary
+            .listHead
+              .row-fluid
+                .listHeadColumn.span3 Month
+                .listHeadColumn.span3 Students Total
+                .listHeadColumn.span3 Active Members
+                .listHeadColumn.lastHeadCol.span3 Membership Income
+            .listBody
+              .listRow.row-fluid
+                .listBodyColumn.span3 October
+                .listBodyColumn.span3 30
+                .listBodyColumn.span3 25
+                .listBodyColumn.lastBodyCol.span3 P 2,500
+              .divider
+              .listRow.row-fluid
+                .listBodyColumn.span3 November
+                .listBodyColumn.span3 33
+                .listBodyColumn.span3 27
+                .listBodyColumn.lastBodyCol.span3 P 2,700
+              .divider
+              .listRow.row-fluid
+                .listBodyColumn.span3 December
+                .listBodyColumn.span3 33
+                .listBodyColumn.span3 27
+                .listBodyColumn.lastBodyCol.span3 P 2,700
 
-          %p
-            %br
+      .dojoSummary.whiteContainer
+        .head Dojos
+        .body
+          .listStyle.instructorSummary
+            .listHead
+              .row-fluid
+                .listHeadColumn.span3 Dojo
+                .listHeadColumn.span3 Number of Members
+                .listHeadColumn.span3 Number of Active Members
+                .listHeadColumn.lastHeadCol.span3 Income from Membership
+            .listBody
+              - @dojos.each do |dojo|
+                .listRow.row-fluid
+                  .listBodyColumn.span3= dojo.name
+                  .listBodyColumn.span3= dojo.users.count
+                  .listBodyColumn.span3 0
+                  .listBodyColumn.lastBodyCol.span3 0
+                .divider
 
-          %table{ style: "width: 100%;" }
-            %tr
-              %th{ style: 'text-align: left;' } Dojo
-              %th{ style: 'text-align: left;' } Number of Members
-              %th{ style: 'text-align: left;' } Number of Active Members
-              %th{ style: 'text-align: left;' } Income from Membership
-            - @dojos.each do |dojo|
-              %tr
-                %td= dojo.name
-                %td= 20 #dojo.users.size
-                %td= 10
-                %td= 1000
+
+          / %p
+          /   %br
+
+          / = link_to 'Add dojo', new_dojo_path, :class => "btn"
+          / = link_to 'Edit profile', edit_user_registration_path, :class => "btn"
+
+          / %p
+          /   %br
+
+          / %table{ style: "width: 100%;" }
+          /   %tr
+          /     %th{ style: 'text-align: left;' } Dojo
+          /     %th{ style: 'text-align: left;' } Number of Members
+          /     %th{ style: 'text-align: left;' } Number of Active Members
+          /     %th{ style: 'text-align: left;' } Income from Membership
+          /   - @dojos.each do |dojo|
+          /     %tr
+          /       %td= dojo.name
+          /       %td= 20 #dojo.users.size
+          /       %td= 10
+          /       %td= 1000

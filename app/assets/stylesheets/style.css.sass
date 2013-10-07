@@ -99,6 +99,38 @@ input.textBox
   @include shadow(0 1px 0 #fff, 0 -2px 2px rgba(#000, 0.03) inset)
 
 .listStyle
+  .listHead
+    color: #888
+    font-weight: 700
+    margin: -25px -26px 0 -25px
+    padding-left: 2.127659574468085%
+    border-bottom: 1px solid #ddd
+    border-right: 1px solid #ddd
+    background: #F7F7F7
+    .listHeadColumn
+      padding: 10px 0 0 10px
+      border-right: 1px solid #ddd
+    .lastHeadCol
+      border-right: none
+  .listBody
+    background: #fff
+    margin: 0 -25px -25px
+    padding-left: 2.127659574468085%
+    .listRow
+      .listBodyColumn
+        padding: 10px 0 0 10px
+        border-right: 1px solid #eee
+      .lastBodyCol
+        border-right: none
+    .divider
+      height: 1px
+      background: #eee
+      margin-left: -2.12766%
+      &:last-child
+        display: none
+
+
+.gridStyle
   .body
     border: none
     @include shadow(0 0 0 1px rgba(#000, 0.12) inset)
@@ -183,3 +215,4 @@ input.textBox
 @import "home"
 @import "signin"
 @import "member"
+@import "dashboard"
