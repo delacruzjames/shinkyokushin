@@ -6,20 +6,20 @@
         .text Shinkyokushin will be expanding its training program nationwide starting today.
         .btn Learn More
   .wrapper
-    .dojosList.whiteContainer
+    .gridStyle.homePagedojosList.whiteContainer
       .head
         Dojos
       .body
-        .dojos.clearfix
+        .listItems.dojos.clearfix
           - @dojos.each do |dojo|
-            .dojo.left
+            .listItem.dojo.left
               .image
                 = link_to "", dojo, :class => "viewIcon"
                 = link_to image_tag(dojo.avatar_url(:medium)), dojo
                 .details
-                  .dojoName= link_to dojo.name, dojo
-                  .instructorName= dojo.instructor.full_name
-                  .membersCount
+                  .detail.firstDetail.dojoName= link_to dojo.name, dojo
+                  .detail.secondDetail.instructorName= dojo.instructor.full_name
+                  .detail.thirdDetail.membersCount
                     = dojo.users.count
                     Member(s)
 

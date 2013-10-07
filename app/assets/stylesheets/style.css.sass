@@ -98,8 +98,121 @@ input.textBox
   border: 1px solid rgba(#000, 0.2)
   @include shadow(0 1px 0 #fff, 0 -2px 2px rgba(#000, 0.03) inset)
 
+.listStyle
+  .listHead
+    color: #888
+    font-weight: 700
+    margin: -25px -26px 0 -25px
+    padding-left: 2.127659574468085%
+    border-bottom: 1px solid #ddd
+    border-right: 1px solid #ddd
+    background: #F7F7F7
+    .listHeadColumn
+      padding: 10px 0 0 10px
+      border-right: 1px solid #ddd
+    .lastHeadCol
+      border-right: none
+  .listBody
+    background: #fff
+    margin: 0 -25px -25px
+    padding-left: 2.127659574468085%
+    .listRow
+      .listBodyColumn
+        padding: 10px 0 0 10px
+        border-right: 1px solid #eee
+      .lastBodyCol
+        border-right: none
+    .divider
+      height: 1px
+      background: #eee
+      margin-left: -2.12766%
+      &:last-child
+        display: none
+
+
+.gridStyle
+  .body
+    border: none
+    @include shadow(0 0 0 1px rgba(#000, 0.12) inset)
+  .listItems
+    margin: -25px
+    overflow-y: hidden
+    .listItem
+      display: inline-block
+      width: 230px
+      border-bottom: 1px solid #ddd
+      border-right: 1px solid #ddd
+      padding: 5px
+      margin-bottom: -1px
+      .image
+        width: 100%
+        height: 150px
+        background: #000
+        overflow: hidden
+        position: relative
+        &:hover
+          .viewIcon
+            margin-top: 0
+            @include opacity(1)
+            @include transition(all 0.2s ease-in-out)
+          img
+            @include opacity(0.7)
+            @include transition(opacity 0.3s ease-in-out)
+          .details
+            margin-bottom: 0
+            @include transition(all 0.2s ease-in-out)
+            .instructorName, .membersCount
+              @include opacity(1)
+              @include transition(opacity 0.4s ease-in-out)
+        .viewIcon
+          position: absolute
+          top: 18px
+          left: 50%
+          margin-top: -40px
+          margin-left: -50px
+          width: 100px
+          height: 50px
+          text-align: center
+          z-index: 1
+          color: #fff
+          font-weight: 700
+          background: url(../assets/view-icon.png) center center no-repeat
+          @include opacity(0)
+          @include transition(all 0.2s ease-in-out)
+        img
+          width: 100%
+          min-height: 120px
+          @include transition(opacity 0.3s ease-in-out)
+        .details
+          padding: 10px
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          border-top: 1px solid rgba(#fff, 0.8)
+          text-shadow: 0 -1px 0 rgba(#fff, 0.5)
+          color: rgba($blackfont, 0.8)
+          margin-bottom: -30px
+          @include rgba-bg(#fff, 0.8)
+          @include transition(all 0.2s ease-in-out)
+          .firstDetail
+            font-weight: 700
+            font-size: 13px
+            color: $redfont
+          .secondDetail
+            font-weight: 700
+          .firstDetail, .secondDetail
+            margin-bottom: 3px
+          .secondDetail, .thirdDetail
+            @include opacity(0)
+            @include transition(opacity 0.2s ease-in-out)
+          .detail
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: ellipsis
+
 @import "header"
 @import "home"
 @import "signin"
 @import "member"
-@import "dojos"
+@import "dashboard"
