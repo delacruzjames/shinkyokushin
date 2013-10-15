@@ -1,20 +1,19 @@
 .dojosListPage.pageContainer
   .wrapper
     .mainSection
-      .whiteContainer
+      .gridStyle.dojosList.whiteContainer
         .head Dojos
         .body
-          .dojos.clearfix
+          .listItems.dojos.clearfix
             - @dojos.each do |dojo|
-              .dojo.left
+              .listItem.dojo.left
                 .image
                   = link_to "", dojo, :class => "viewIcon"
                   = link_to image_tag(dojo.avatar_url(:small)), dojo
-                  .blackCover
                   .details
-                    .dojoName= dojo.name
-                    .instructorName= dojo.instructor.full_name
-                    .membersCount
+                    .detail.firstDetail.dojoName= dojo.name
+                    .detail.secondDetail.instructorName= dojo.instructor.full_name
+                    .detail.thirdDetail.membersCount
                       = dojo.users.count
                       Member(s)
           .dojos
