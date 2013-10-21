@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'newrelic_rpm'
 gem 'pg'
 
 # templating
@@ -61,3 +60,4 @@ group :test, :development do
   gem 'rspec-rails'
 end
 
+gem 'newrelic_rpm'
