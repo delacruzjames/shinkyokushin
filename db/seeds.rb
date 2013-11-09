@@ -75,6 +75,13 @@ juan.dojos.first.members.create(
          email: 'peter@gmail.com',
       password: 'password')
 
+puts "Creating belt..."
+%w{ No 10th 9th 8th 7th 6th 5th 4th 3rd 2nd 1st}.each do |belt|
+  Belt.create!(
+    name: "#{belt} kyu",
+    description: "update me..")
+end
+
 
 
 puts 'Creating admin...'
