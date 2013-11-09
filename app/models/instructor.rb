@@ -8,6 +8,10 @@ class Instructor < User
   accepts_nested_attributes_for :dojos
 
 
+  def sensei
+  	"Sensei #{first_name} #{last_name}"
+  end
+
   private
 
     def init

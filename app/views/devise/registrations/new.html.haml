@@ -8,6 +8,12 @@
             = devise_error_messages!
             = f.hidden_field :type, :value => "Member"
             %p
+              = f.label :dojo_id
+              = f.select :dojo_id, Dojo.all.map{|d| [d.name, d.id]}
+            %p
+              = f.label :first_name
+              = f.text_field :first_name
+            %p
               = f.label :first_name
               = f.text_field :first_name
             %p

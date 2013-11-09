@@ -8,8 +8,11 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       column do
         panel "Pending Members" do
-          div :class => "center" do
-            b ""
+          table_for Member.where(:is_active => false).limit(10).each do |table|
+            table.column("Full Name") {|member| link_to (member.full_name), admin_member_path(member.slug)}
+            table.column("Dojo") {|member| member.dojo.name}
+            table.column("Date Registered") {|member| member.created_at.strftime("%b %d, %Y")}
+            table.column("Instructor") {|member| member.dojo.instructor.sensei}
           end
         end
       end

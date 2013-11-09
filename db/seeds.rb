@@ -7,16 +7,19 @@ end
 
 puts 'Creating instructor...'
 james = Instructor.new(
+              is_active: true,
              first_name: 'James',
               last_name: 'Dela Cruz',
                   email: 'james@shinkyokushin.com.ph',
                password: 'password')
 rose = Instructor.new(
+              is_active: true,
              first_name: 'Rose',
               last_name: 'Dela Cruz',
                   email: 'rose@shinkyokushin.com.ph',
                password: 'password')
 juan = Instructor.new(
+              is_active: true,
              first_name: 'Juan',
               last_name: 'Dela Cruz',
                   email: 'juan@shinkyokushin.com.ph',
