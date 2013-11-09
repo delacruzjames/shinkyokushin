@@ -2,12 +2,28 @@
   .wrapper
     .mainSection
       .signInContainer.whiteContainer
-        .head Register
+        .head Registration From
         .body
-          / - @members.each do |member|
-          /   %ul
-          /     %li= link_to member.email, member
-          .members
+          = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+            = devise_error_messages!
+            = f.hidden_field :type, :value => "Member"
+            %p
+              = f.label :first_name
+              = f.text_field :first_name
+            %p
+              = f.label :last_name
+              = f.text_field :last_name
+            %p
+              = f.label :email
+              = f.email_field :email
+            %p
+              = f.label :password
+              = f.password_field :password
+            %p
+              = f.label :password_confirmation
+              = f.password_field :password_confirmation
+            = f.submit "Sign up"
+        .members
 
 / <h2>Registration From</h2>
 
