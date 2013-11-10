@@ -4,9 +4,9 @@
       .whiteContainer
         .head Members
         .body
-          / - @members.each do |member|
-          /   %ul
-          /     %li= link_to member.email, member
+          - @approved_members.each do |member|
+            %ul
+              %li= link_to member.email, member
           .members
             
 
