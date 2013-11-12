@@ -1,5 +1,7 @@
 ActiveAdmin.register Belt do
-  
+
+  filter :description
+    
   index do
     column :name
     column :description

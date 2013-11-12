@@ -1,5 +1,7 @@
 ActiveAdmin.register Instructor do
 	
+  filter :email
+  
 	index do
 		column :full_name
 		column :email

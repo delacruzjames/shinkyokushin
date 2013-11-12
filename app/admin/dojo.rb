@@ -1,5 +1,7 @@
 ActiveAdmin.register Dojo do
 
+	filter :instructor
+	
 	index do
 		column :avatar do |dojo_image|
 			image_tag(dojo_image.avatar, :height => 100)

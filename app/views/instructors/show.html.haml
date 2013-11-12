@@ -1,4 +1,12 @@
-%h2 Instructors#show
-%p find me app/views/instructors/show.html.haml
-
-%h1= @instructor.full_name
+.instructorPage.pageContainer
+  .wrapper
+    .mainSection
+      .row-fluid
+        .span4
+          .memberPic.whiteContainer
+            %figure
+              = image_tag "member.jpg"
+        .span8
+          .instructorInfo.WhiteContainer
+            .head Personal Info
+            .body
